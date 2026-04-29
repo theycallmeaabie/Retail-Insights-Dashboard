@@ -13,10 +13,9 @@ from recommender import build_item_matrix, get_recommendations
 
 app = FastAPI()
 
-_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_origins.split(","),
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
